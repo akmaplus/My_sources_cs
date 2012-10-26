@@ -3,30 +3,30 @@ using System.Drawing;
 
 public class MainWindow : Form
 {  
-  Label lbl = new Label();    //все! элементы доступные напрямую с формы должны быть объявлены здесь, иначе ниже не прокатит
+  Label lbl = new Label();    //РІСЃРµ! СЌР»РµРјРµРЅС‚С‹ РґРѕСЃС‚СѓРїРЅС‹Рµ РЅР°РїСЂСЏРјСѓСЋ СЃ С„РѕСЂРјС‹ РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ РѕР±СЉСЏРІР»РµРЅС‹ Р·РґРµСЃСЊ, РёРЅР°С‡Рµ РЅРёР¶Рµ РЅРµ РїСЂРѕРєР°С‚РёС‚
 
   public MainWindow()
           : base()
-                    {   this.Size = new System.Drawing.Size(300, 300);        //размер формы
+                    {   this.Size = new System.Drawing.Size(300, 300);        //СЂР°Р·РјРµСЂ С„РѕСЂРјС‹
                         this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
                         lbl.Name = "lbl";
 
-                        Font fnt = new Font("Verdana", 16, FontStyle.Bold | FontStyle.Italic);  //новый шрифт
+                        Font fnt = new Font("Verdana", 16, FontStyle.Bold | FontStyle.Italic);  //РЅРѕРІС‹Р№ С€СЂРёС„С‚
 
-                        lbl.AutoSize = true;                  //включить растягивание метки под текст
-                        lbl.Text = "Здесь была Алисса";       //текст метки
-                        lbl.Font = fnt;                       //шрифт метки
-                        lbl.BackColor = Color.Aquamarine;     //фоновый цвет метки
-                        lbl.ForeColor = Color.DarkMagenta;    //цвет шрифта метка
-                        lbl.Location = new Point(10, 50);     //расположение метки на форме
+                        lbl.AutoSize = true;                  //РІРєР»СЋС‡РёС‚СЊ СЂР°СЃС‚СЏРіРёРІР°РЅРёРµ РјРµС‚РєРё РїРѕРґ С‚РµРєСЃС‚
+                        lbl.Text = "Р—РґРµСЃСЊ Р±С‹Р»Р° РђР»РёСЃСЃР°";       //С‚РµРєСЃС‚ РјРµС‚РєРё
+                        lbl.Font = fnt;                       //С€СЂРёС„С‚ РјРµС‚РєРё
+                        lbl.BackColor = Color.Aquamarine;     //С„РѕРЅРѕРІС‹Р№ С†РІРµС‚ РјРµС‚РєРё
+                        lbl.ForeColor = Color.DarkMagenta;    //С†РІРµС‚ С€СЂРёС„С‚Р° РјРµС‚РєР°
+                        lbl.Location = new Point(10, 50);     //СЂР°СЃРїРѕР»РѕР¶РµРЅРёРµ РјРµС‚РєРё РЅР° С„РѕСЂРјРµ
 
-                        this.Controls.Add(lbl);               //добавить в форму новый контрол - метку lbl
+                        this.Controls.Add(lbl);               //РґРѕР±Р°РІРёС‚СЊ РІ С„РѕСЂРјСѓ РЅРѕРІС‹Р№ РєРѕРЅС‚СЂРѕР» - РјРµС‚РєСѓ lbl
 
-                        this.lbl.MouseMove += new MouseEventHandler(this.lbl_MouseMove);  //подключить обработчик события мыши
+                        this.lbl.MouseMove += new MouseEventHandler(this.lbl_MouseMove);  //РїРѕРґРєР»СЋС‡РёС‚СЊ РѕР±СЂР°Р±РѕС‚С‡РёРє СЃРѕР±С‹С‚РёСЏ РјС‹С€Рё
                      }
 
-                     //обработчик события - Движение мыши
+                     //РѕР±СЂР°Р±РѕС‚С‡РёРє СЃРѕР±С‹С‚РёСЏ - Р”РІРёР¶РµРЅРёРµ РјС‹С€Рё
                      private void lbl_MouseMove(object sender, MouseEventArgs e)
                      {
                         this.Text = string.Format("x:{0} y:{1}", e.X, e.Y);

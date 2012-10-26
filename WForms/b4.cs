@@ -12,33 +12,33 @@ public class MainWindow : Form
 
   public MainWindow()
           : base()
-                    {     Size = new Size(500, 400);   //размер формы
+                    {     Size = new Size(500, 400);   //СЂР°Р·РјРµСЂ С„РѕСЂРјС‹
                           FormBorderStyle = FormBorderStyle.FixedSingle;
                           MaximizeBox = false;
 
-                          lbl.AutoSize    = false;                       //выключаем авторазмер!
-                          lbl.Text        = "Приветик";
+                          lbl.AutoSize    = false;                       //РІС‹РєР»СЋС‡Р°РµРј Р°РІС‚РѕСЂР°Р·РјРµСЂ!
+                          lbl.Text        = "РџСЂРёРІРµС‚РёРє";
                           lbl.BorderStyle = BorderStyle.Fixed3D;
-                          lbl.BackColor   = Color.Aqua;                 //меняем цвет фона метки
+                          lbl.BackColor   = Color.Aqua;                 //РјРµРЅСЏРµРј С†РІРµС‚ С„РѕРЅР° РјРµС‚РєРё
                           lbl.Location    = new Point(10,10);
                           lbl.TextAlign   = ContentAlignment.MiddleCenter;
                           lbl.Font        = new Font("Times New Roman", 27.75F, ((FontStyle)((FontStyle.Bold | FontStyle.Italic))), GraphicsUnit.Point, ((byte)(204)));
 
-                          //докировка на всю поверхность формы
+                          //РґРѕРєРёСЂРѕРІРєР° РЅР° РІСЃСЋ РїРѕРІРµСЂС…РЅРѕСЃС‚СЊ С„РѕСЂРјС‹
                           lbl.Dock = DockStyle.Fill;     //Top Right None Left Bottom
                           
-                          Controls.Add(lbl);  //добавить новую метку на форму
+                          Controls.Add(lbl);  //РґРѕР±Р°РІРёС‚СЊ РЅРѕРІСѓСЋ РјРµС‚РєСѓ РЅР° С„РѕСЂРјСѓ
 
-                          sslLabel1.Size = new Size(200, 17);  sslLabel1.Name = "sslLabel"; sslLabel1.Text = "Приветик!"; 
-                          sslLabel2.Size = new Size(150, 17);  sslLabel2.Name = "sslLabel"; sslLabel2.Text = "Ура, получилось!";
-                          sslLabel3.Size = new Size(60, 17);   sslLabel3.Name = "sslLabel"; sslLabel3.Text = "Работает!";  
+                          sslLabel1.Size = new Size(200, 17);  sslLabel1.Name = "sslLabel"; sslLabel1.Text = "РџСЂРёРІРµС‚РёРє!"; 
+                          sslLabel2.Size = new Size(150, 17);  sslLabel2.Name = "sslLabel"; sslLabel2.Text = "РЈСЂР°, РїРѕР»СѓС‡РёР»РѕСЃСЊ!";
+                          sslLabel3.Size = new Size(60, 17);   sslLabel3.Name = "sslLabel"; sslLabel3.Text = "Р Р°Р±РѕС‚Р°РµС‚!";  
 
                           sslLabel1.AutoSize  = false; 
                           sslLabel2.AutoSize  = false;  
 
                           ssInfo.Items.AddRange(new ToolStripItem[] { sslLabel1, sslLabel2, sslLabel3} );
 
-                          //ниже, необязательно на данный момент
+                          //РЅРёР¶Рµ, РЅРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РЅР° РґР°РЅРЅС‹Р№ РјРѕРјРµРЅС‚
                           //ssInfo.Location  = new Point(0, 244);  
                           //ssInfo.Size = new Size(292, 22); ssInfo.Name = "ssInfo"; ssInfo.Text = "ssInfo";
 
@@ -46,10 +46,10 @@ public class MainWindow : Form
 
                           Controls.Add(ssInfo);
 
-                          PerformLayout();      //произвести раскладку формы
+                          PerformLayout();      //РїСЂРѕРёР·РІРµСЃС‚Рё СЂР°СЃРєР»Р°РґРєСѓ С„РѕСЂРјС‹
                      }
 
-        private void lbl_Click(object sender, EventArgs e){  MessageBox.Show("Привет"); }
+        private void lbl_Click(object sender, EventArgs e){  MessageBox.Show("РџСЂРёРІРµС‚"); }
 }
 
 class App

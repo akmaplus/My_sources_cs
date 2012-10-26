@@ -5,15 +5,15 @@ public class MainWindow : Form
 
   public MainWindow()
           : base()
-                    {   //в предыдущих примерах не было указано слово this - неообязательно, без него неясен смысл присваиваний
+                    {   //РІ РїСЂРµРґС‹РґСѓС‰РёС… РїСЂРёРјРµСЂР°С… РЅРµ Р±С‹Р»Рѕ СѓРєР°Р·Р°РЅРѕ СЃР»РѕРІРѕ this - РЅРµРѕРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ, Р±РµР· РЅРµРіРѕ РЅРµСЏСЃРµРЅ СЃРјС‹СЃР» РїСЂРёСЃРІР°РёРІР°РЅРёР№
 
                         //this.ClientSize          = new System.Drawing.Size(422, 114);
-                        this.Size = new System.Drawing.Size(300, 300);  //задаем размер формы
+                        this.Size = new System.Drawing.Size(300, 300);  //Р·Р°РґР°РµРј СЂР°Р·РјРµСЂ С„РѕСЂРјС‹
 
                         this.Name = "MainWindow";
-                        this.Text = "Тест";
+                        this.Text = "РўРµСЃС‚";
                         this.MaximizeBox = false; 
-                                                                            //формат границ формы:
+                                                                            //С„РѕСЂРјР°С‚ РіСЂР°РЅРёС† С„РѕСЂРјС‹:
                         this.FormBorderStyle = FormBorderStyle.FixedSingle; //SizableToolWindow Sizable None FixedToolWindow FixedDialog Fixed3D
 
                      }

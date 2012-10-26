@@ -4,7 +4,7 @@ class Program
 {
    static void Main()    
    {
-      //����祭�� �����ன ����樨 �� ���㦥��� �ணࠬ��
+      //получение некоторой инфорации об окружении программы
 
     foreach( string drive in Environment.GetLogicalDrives() )
       Console.WriteLine("Drive: {0}", drive);

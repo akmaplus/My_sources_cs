@@ -19,14 +19,14 @@ public partial class MainWindow : Form{
             AutoScaleMode       = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize          = new System.Drawing.Size(422, 114);
             Name = "MainWindow";
-            Text = "Простое приложение";
+            Text = "РџСЂРѕСЃС‚РѕРµ РїСЂРёР»РѕР¶РµРЅРёРµ";
             ResumeLayout(false);
                      }
 
         void MainWindow_FormClosing(object sender, FormClosingEventArgs e){
 
-            DialogResult dr = MessageBox.Show("Вы хотите закрыть окно приложения или нет?",
-              "Событие Closing!", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Р’С‹ С…РѕС‚РёС‚Рµ Р·Р°РєСЂС‹С‚СЊ РѕРєРЅРѕ РїСЂРёР»РѕР¶РµРЅРёСЏ РёР»Рё РЅРµС‚?",
+              "РЎРѕР±С‹С‚РёРµ Closing!", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.No) e.Cancel = true;
             else                       e.Cancel = false;

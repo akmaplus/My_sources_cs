@@ -1,4 +1,4 @@
-//демонстрируется класс, производный от класса MarshalByRefObject, который в дальнейшем будет использоваться для удаленного взаимодействия
+//╨┤╨╡╨╝╨╛╨╜╤Б╤В╤А╨╕╤А╤Г╨╡╤В╤Б╤П ╨║╨╗╨░╤Б╤Б, ╨┐╤А╨╛╨╕╨╖╨▓╨╛╨┤╨╜╤Л╨╣ ╨╛╤В ╨║╨╗╨░╤Б╤Б╨░ MarshalByRefObject, ╨║╨╛╤В╨╛╤А╤Л╨╣ ╨▓ ╨┤╨░╨╗╤М╨╜╨╡╨╣╤И╨╡╨╝ ╨▒╤Г╨┤╨╡╤В ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М╤Б╤П ╨┤╨╗╤П ╤Г╨┤╨░╨╗╨╡╨╜╨╜╨╛╨│╨╛ ╨▓╨╖╨░╨╕╨╝╨╛╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П
 using System;            
 using System.Runtime.Remoting;
 using System.Security.Permissions;
@@ -6,24 +6,24 @@ using System.Security.Permissions;
 public class SetObjectUriForMarshalTest  
 {
 
-    class TestClass : MarshalByRefObject // класс Worker производный от класса MarshalByRefObject
+    class TestClass : MarshalByRefObject // ╨║╨╗╨░╤Б╤Б Worker ╨┐╤А╨╛╨╕╨╖╨▓╨╛╨┤╨╜╤Л╨╣ ╨╛╤В ╨║╨╗╨░╤Б╤Б╨░ MarshalByRefObject
     {
     }
-     //атрибуты сборки
+     //╨░╤В╤А╨╕╨▒╤Г╤В╤Л ╤Б╨▒╨╛╤А╨║╨╕
     [SecurityPermission(SecurityAction.Demand, Flags=SecurityPermissionFlag.RemotingConfiguration)] 
 
     public static void Main()  
     {
 
-        TestClass obj = new TestClass();     //создаем экземпляр класса TestClass
+        TestClass obj = new TestClass();     //╤Б╨╛╨╖╨┤╨░╨╡╨╝ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨║╨╗╨░╤Б╤Б╨░ TestClass
 
-        RemotingServices.SetObjectUriForMarshal(obj, "testUri");  //задать имя объекта для внешнего маршалинга
+        RemotingServices.SetObjectUriForMarshal(obj, "testUri");  //╨╖╨░╨┤╨░╤В╤М ╨╕╨╝╤П ╨╛╨▒╤К╨╡╨║╤В╨░ ╨┤╨╗╤П ╨▓╨╜╨╡╤И╨╜╨╡╨│╨╛ ╨╝╨░╤А╤И╨░╨╗╨╕╨╜╨│╨░
 
-        RemotingServices.Marshal(obj);  //подключить для внешнего маршалинга экземпляр класса
+        RemotingServices.Marshal(obj);  //╨┐╨╛╨┤╨║╨╗╤О╤З╨╕╤В╤М ╨┤╨╗╤П ╨▓╨╜╨╡╤И╨╜╨╡╨│╨╛ ╨╝╨░╤А╤И╨░╨╗╨╕╨╜╨│╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨║╨╗╨░╤Б╤Б╨░
 
-        Console.WriteLine( RemotingServices.GetObjectUri(obj) );  //печать локатора объекта маршалинга
+        Console.WriteLine( RemotingServices.GetObjectUri(obj) );  //╨┐╨╡╤З╨░╤В╤М ╨╗╨╛╨║╨░╤В╨╛╤А╨░ ╨╛╨▒╤К╨╡╨║╤В╨░ ╨╝╨░╤А╤И╨░╨╗╨╕╨╜╨│╨░
     }
 }
 
 
-//ВЫВОДЫ: класс MarshalByRefObject предоставляет функционал для работы с маршалингом, возможностью работы класса удаленно
+//╨Т╨л╨Т╨Ю╨Ф╨л: ╨║╨╗╨░╤Б╤Б MarshalByRefObject ╨┐╤А╨╡╨┤╨╛╤Б╤В╨░╨▓╨╗╤П╨╡╤В ╤Д╤Г╨╜╨║╤Ж╨╕╨╛╨╜╨░╨╗ ╨┤╨╗╤П ╤А╨░╨▒╨╛╤В╤Л ╤Б ╨╝╨░╤А╤И╨░╨╗╨╕╨╜╨│╨╛╨╝, ╨▓╨╛╨╖╨╝╨╛╨╢╨╜╨╛╤Б╤В╤М╤О ╤А╨░╨▒╨╛╤В╤Л ╨║╨╗╨░╤Б╤Б╨░ ╤Г╨┤╨░╨╗╨╡╨╜╨╜╨╛

@@ -1,19 +1,19 @@
-//демонстрируется реализация интерфейсов ISite, IComponent и IContainer для их использования в контейнере библиотеки
+//РґРµРјРѕРЅСЃС‚СЂРёСЂСѓРµС‚СЃСЏ СЂРµР°Р»РёР·Р°С†РёСЏ РёРЅС‚РµСЂС„РµР№СЃРѕРІ ISite, IComponent Рё IContainer РґР»СЏ РёС… РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РІ РєРѕРЅС‚РµР№РЅРµСЂРµ Р±РёР±Р»РёРѕС‚РµРєРё
 
-  //ниже, реализация интерфейса ISite
+  //РЅРёР¶Рµ, СЂРµР°Р»РёР·Р°С†РёСЏ РёРЅС‚РµСЂС„РµР№СЃР° ISite
 
-  // класс ISBNSite представляет компонент ISBN-кода книги
-  class ISBNSite : ISite  //наследует(реализует) интерфейс ISite
+  // РєР»Р°СЃСЃ ISBNSite РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ РєРѕРјРїРѕРЅРµРЅС‚ ISBN-РєРѕРґР° РєРЅРёРіРё
+  class ISBNSite : ISite  //РЅР°СЃР»РµРґСѓРµС‚(СЂРµР°Р»РёР·СѓРµС‚) РёРЅС‚РµСЂС„РµР№СЃ ISite
   {
-    //закрытые поля объекта
-    private IComponent m_curComponent;  //компонент
-    private IContainer m_curContainer;  //контейнер
+    //Р·Р°РєСЂС‹С‚С‹Рµ РїРѕР»СЏ РѕР±СЉРµРєС‚Р°
+    private IComponent m_curComponent;  //РєРѕРјРїРѕРЅРµРЅС‚
+    private IContainer m_curContainer;  //РєРѕРЅС‚РµР№РЅРµСЂ
 
-    private bool m_bDesignMode;         //флаг - Режим разработки
+    private bool m_bDesignMode;         //С„Р»Р°Рі - Р РµР¶РёРј СЂР°Р·СЂР°Р±РѕС‚РєРё
 
-    private string m_ISBNCmpName;       //специфическое для нашего дочернего класса поле - ISBN-имя
+    private string m_ISBNCmpName;       //СЃРїРµС†РёС„РёС‡РµСЃРєРѕРµ РґР»СЏ РЅР°С€РµРіРѕ РґРѕС‡РµСЂРЅРµРіРѕ РєР»Р°СЃСЃР° РїРѕР»Рµ - ISBN-РёРјСЏ
 
-    //конструктор класса - принимает пару контейнер-компонент
+    //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° - РїСЂРёРЅРёРјР°РµС‚ РїР°СЂСѓ РєРѕРЅС‚РµР№РЅРµСЂ-РєРѕРјРїРѕРЅРµРЅС‚
     public ISBNSite(IContainer actvCntr, IComponent prntCmpnt)
     {
       m_curComponent = prntCmpnt;
@@ -22,7 +22,7 @@
       m_ISBNCmpName = null;
     }
 
-    //реализация интерфейса ISite
+    //СЂРµР°Р»РёР·Р°С†РёСЏ РёРЅС‚РµСЂС„РµР№СЃР° ISite
     public virtual IComponent Component  {  get  { return m_curComponent;  }  }
     public virtual IContainer Container  {  get  { return m_curContainer;  }  }
     
@@ -32,25 +32,25 @@
                                             set  { m_ISBNCmpName = value;  }
                                          }
 
-    //реализация интерфейса IServiceProvider
+    //СЂРµР°Р»РёР·Р°С†РёСЏ РёРЅС‚РµСЂС„РµР№СЃР° IServiceProvider
     public virtual object GetService(Type serviceType)
     {
-      //в этом примере не используется
+      //РІ СЌС‚РѕРј РїСЂРёРјРµСЂРµ РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ
       return null;
     }
 
   }
 
 
-  // класс BookComponent представляет компонент контейнера книг
-  class BookComponent : IComponent  //наследует(реализует) интерфейс IComponent
+  // РєР»Р°СЃСЃ BookComponent РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ РєРѕРјРїРѕРЅРµРЅС‚ РєРѕРЅС‚РµР№РЅРµСЂР° РєРЅРёРі
+  class BookComponent : IComponent  //РЅР°СЃР»РµРґСѓРµС‚(СЂРµР°Р»РёР·СѓРµС‚) РёРЅС‚РµСЂС„РµР№СЃ IComponent
   {
     public event EventHandler Disposed;
     private ISite m_curISBNSite;
     private string m_bookTitle;
     private string m_bookAuthor;
 
-    //конструктор - принимает пару Название-Автор
+    //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ - РїСЂРёРЅРёРјР°РµС‚ РїР°СЂСѓ РќР°Р·РІР°РЅРёРµ-РђРІС‚РѕСЂ
     public BookComponent(string Title, string Author)
     {
       m_curISBNSite = null;
@@ -59,17 +59,17 @@
       m_bookAuthor = Author;
     }
 
-    //свойства
+    //СЃРІРѕР№СЃС‚РІР°
     public string Title       {  get   {   return m_bookTitle;    }   }
     public string Author      {  get   {   return m_bookAuthor;   }   }
 
-    //деструктор ресурсов
+    //РґРµСЃС‚СЂСѓРєС‚РѕСЂ СЂРµСЃСѓСЂСЃРѕРІ
     public virtual void Dispose()
     {   
-      if(Disposed != null)  Disposed(this,EventArgs.Empty);  //для примера, очищать нечего
+      if(Disposed != null)  Disposed(this,EventArgs.Empty);  //РґР»СЏ РїСЂРёРјРµСЂР°, РѕС‡РёС‰Р°С‚СЊ РЅРµС‡РµРіРѕ
     }
 
-    //реализация интерфейса ISite
+    //СЂРµР°Р»РёР·Р°С†РёСЏ РёРЅС‚РµСЂС„РµР№СЃР° ISite
     public virtual ISite Site {  get  {  return m_curISBNSite;    }
                                  set  {   m_curISBNSite = value;  }
                               }

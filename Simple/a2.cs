@@ -3,10 +3,10 @@ using System;
 
 class Program
 {
-   static void Main()     //Ø‡Æ·‚Æ© ¢†‡®†≠‚, °•ß ™Æ§† ¢Æß¢‡†‚† Ø‡Æ£‡†¨¨Î
+   static void Main()     //–ø—Ä–æ—Å—Ç–æ–π –≤–∞—Ä–∏–∞–Ω—Ç, –±–µ–∑ –∫–æ–¥–∞ –≤–æ–∑–≤—Ä–∞—Ç–∞ –ø—Ä–æ–≥—Ä–∞–º–º—ã
    {
 
-     Console.WriteLine("è‡®¢•‚");
+     Console.WriteLine("–ü—Ä–∏–≤–µ—Ç");
 
    }
 }

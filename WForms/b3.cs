@@ -6,32 +6,32 @@ public class MainWindow : Form
 {  
   public MainWindow()
           : base()
-                    {   this.Size = new System.Drawing.Size(525, 340);        //размер формы
+                    {   this.Size = new System.Drawing.Size(525, 340);        //СЂР°Р·РјРµСЂ С„РѕСЂРјС‹
                         this.FormBorderStyle = FormBorderStyle.FixedSingle;
                         this.MaximizeBox = false;
 
-                        for(int row=10; row>0;  row--)  //генерируем кучу меток, в виде строк-колонок
+                        for(int row=10; row>0;  row--)  //РіРµРЅРµСЂРёСЂСѓРµРј РєСѓС‡Сѓ РјРµС‚РѕРє, РІ РІРёРґРµ СЃС‚СЂРѕРє-РєРѕР»РѕРЅРѕРє
                         for(int col=10; col>0;  col--)
                         {
                           Label lbl = new Label();
                           lbl.AutoSize = true; 
-                          lbl.Text = string.Format("{0,5}:{1,-5}", row, col);  //параметр, [выравнивание] длина поля
+                          lbl.Text = string.Format("{0,5}:{1,-5}", row, col);  //РїР°СЂР°РјРµС‚СЂ, [РІС‹СЂР°РІРЅРёРІР°РЅРёРµ] РґР»РёРЅР° РїРѕР»СЏ
                           lbl.BorderStyle = BorderStyle.Fixed3D;
                           lbl.Location = new Point((50*col)-40, (30*row)-20);
                           
-                          this.Controls.Add(lbl);  //добавить новую метку на форму
+                          this.Controls.Add(lbl);  //РґРѕР±Р°РІРёС‚СЊ РЅРѕРІСѓСЋ РјРµС‚РєСѓ РЅР° С„РѕСЂРјСѓ
 
-                          //назначаем обработчик события - Клик по метке
+                          //РЅР°Р·РЅР°С‡Р°РµРј РѕР±СЂР°Р±РѕС‚С‡РёРє СЃРѕР±С‹С‚РёСЏ - РљР»РёРє РїРѕ РјРµС‚РєРµ
                           lbl.Click += new System.EventHandler(this.lbl_Click);
                         }
                      }
-        //обработчик события - Клик по метке
+        //РѕР±СЂР°Р±РѕС‚С‡РёРє СЃРѕР±С‹С‚РёСЏ - РљР»РёРє РїРѕ РјРµС‚РєРµ
         private void lbl_Click(object sender, EventArgs e)
         {
-           Label s = (Label)sender; //получаем источник события - метку
+           Label s = (Label)sender; //РїРѕР»СѓС‡Р°РµРј РёСЃС‚РѕС‡РЅРёРє СЃРѕР±С‹С‚РёСЏ - РјРµС‚РєСѓ
 
-           this.Text = string.Format("{0}", s.Text );  //получаем текст метки, т.к. имена меток выставлены не были
-           s.BackColor = Color.Aqua;   //меняем цвет фона метки
+           this.Text = string.Format("{0}", s.Text );  //РїРѕР»СѓС‡Р°РµРј С‚РµРєСЃС‚ РјРµС‚РєРё, С‚.Рє. РёРјРµРЅР° РјРµС‚РѕРє РІС‹СЃС‚Р°РІР»РµРЅС‹ РЅРµ Р±С‹Р»Рё
+           s.BackColor = Color.Aqua;   //РјРµРЅСЏРµРј С†РІРµС‚ С„РѕРЅР° РјРµС‚РєРё
         }
 }
 

@@ -1,16 +1,16 @@
 using System;
 
-namespace Bookstore  // Набор классов для обслуживания книжного магазина:
+namespace Bookstore  // ╨Э╨░╨▒╨╛╤А ╨║╨╗╨░╤Б╤Б╨╛╨▓ ╨┤╨╗╤П ╨╛╨▒╤Б╨╗╤Г╨╢╨╕╨▓╨░╨╜╨╕╤П ╨║╨╜╨╕╨╢╨╜╨╛╨│╨╛ ╨╝╨░╨│╨░╨╖╨╕╨╜╨░:
 {
    using System.Collections;
 
-   // Описание книги в списке книг:
+   // ╨Ю╨┐╨╕╤Б╨░╨╜╨╕╨╡ ╨║╨╜╨╕╨│╨╕ ╨▓ ╤Б╨┐╨╕╤Б╨║╨╡ ╨║╨╜╨╕╨│:
    public struct Book
    {
-      public string Title;        // Название книги.
-      public string Author;       // Автор книги.
-      public decimal Price;       // Цена книги.
-      public bool Paperback;      // Книга в бумажной обложке?
+      public string Title;        // ╨Э╨░╨╖╨▓╨░╨╜╨╕╨╡ ╨║╨╜╨╕╨│╨╕.
+      public string Author;       // ╨Р╨▓╤В╨╛╤А ╨║╨╜╨╕╨│╨╕.
+      public decimal Price;       // ╨ж╨╡╨╜╨░ ╨║╨╜╨╕╨│╨╕.
+      public bool Paperback;      // ╨Ъ╨╜╨╕╨│╨░ ╨▓ ╨▒╤Г╨╝╨░╨╢╨╜╨╛╨╣ ╨╛╨▒╨╗╨╛╨╢╨║╨╡?
 
       public Book(string title, string author, decimal price, bool paperBack)
       {
@@ -21,35 +21,35 @@ namespace Bookstore  // Набор классов для обслуживания книжного магазина:
       }
    }
    
-   public delegate void ProcessBookDelegate(Book book);   // Объявление типа делегата для обработки книги:
+   public delegate void ProcessBookDelegate(Book book);   // ╨Ю╨▒╤К╤П╨▓╨╗╨╡╨╜╨╕╨╡ ╤В╨╕╨┐╨░ ╨┤╨╡╨╗╨╡╨│╨░╤В╨░ ╨┤╨╗╤П ╨╛╨▒╤А╨░╨▒╨╛╤В╨║╨╕ ╨║╨╜╨╕╨│╨╕:
    
-   public class BookDB   // Обслуживание базы данных книг.
+   public class BookDB   // ╨Ю╨▒╤Б╨╗╤Г╨╢╨╕╨▓╨░╨╜╨╕╨╡ ╨▒╨░╨╖╤Л ╨┤╨░╨╜╨╜╤Л╤Е ╨║╨╜╨╕╨│.
    {
-      ArrayList list = new ArrayList();    // Список всех книг в базе данных:
+      ArrayList list = new ArrayList();    // ╨б╨┐╨╕╤Б╨╛╨║ ╨▓╤Б╨╡╤Е ╨║╨╜╨╕╨│ ╨▓ ╨▒╨░╨╖╨╡ ╨┤╨░╨╜╨╜╤Л╤Е:
 
-      // Добавление книги в базу данных:
+      // ╨Ф╨╛╨▒╨░╨▓╨╗╨╡╨╜╨╕╨╡ ╨║╨╜╨╕╨│╨╕ ╨▓ ╨▒╨░╨╖╤Г ╨┤╨░╨╜╨╜╤Л╤Е:
       public void AddBook(string title, string author, decimal price, bool paperBack)
       {
          list.Add(new Book(title, author, price, paperBack));
       }
 
-      // Вызов переданного делегата каждой книге в бумажной обложке для ее обработки: 
+      // ╨Т╤Л╨╖╨╛╨▓ ╨┐╨╡╤А╨╡╨┤╨░╨╜╨╜╨╛╨│╨╛ ╨┤╨╡╨╗╨╡╨│╨░╤В╨░ ╨║╨░╨╢╨┤╨╛╨╣ ╨║╨╜╨╕╨│╨╡ ╨▓ ╨▒╤Г╨╝╨░╨╢╨╜╨╛╨╣ ╨╛╨▒╨╗╨╛╨╢╨║╨╡ ╨┤╨╗╤П ╨╡╨╡ ╨╛╨▒╤А╨░╨▒╨╛╤В╨║╨╕: 
       public void ProcessPaperbackBooks(ProcessBookDelegate processBook)
       {
          foreach (Book b in list) 
          {
-            if (b.Paperback) processBook(b);  // Вызов делегата:
+            if (b.Paperback) processBook(b);  // ╨Т╤Л╨╖╨╛╨▓ ╨┤╨╡╨╗╨╡╨│╨░╤В╨░:
          }
       }
    }
 }
 
 
-namespace BookTestClient   // Использование классов книжного магазина:
+namespace BookTestClient   // ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╕╨╡ ╨║╨╗╨░╤Б╤Б╨╛╨▓ ╨║╨╜╨╕╨╢╨╜╨╛╨│╨╛ ╨╝╨░╨│╨░╨╖╨╕╨╜╨░:
 {
    using Bookstore;
    
-   class PriceTotaller   // Класс для общих и средних цен на книги:
+   class PriceTotaller   // ╨Ъ╨╗╨░╤Б╤Б ╨┤╨╗╤П ╨╛╨▒╤Й╨╕╤Е ╨╕ ╤Б╤А╨╡╨┤╨╜╨╕╤Е ╤Ж╨╡╨╜ ╨╜╨░ ╨║╨╜╨╕╨│╨╕:
    {
       int countBooks = 0;
       decimal priceBooks = 0.0m;
@@ -70,39 +70,39 @@ namespace BookTestClient   // Использование классов книжного магазина:
 
 //////////////////////////////////////////////////////////////////////////////
    
-   class Test  // Класс для тестирования базы данных книг:
+   class Test  // ╨Ъ╨╗╨░╤Б╤Б ╨┤╨╗╤П ╤В╨╡╤Б╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╤П ╨▒╨░╨╖╤Л ╨┤╨░╨╜╨╜╤Л╤Е ╨║╨╜╨╕╨│:
    {
-      static void PrintTitle(Book b)  // Печать названия книги.
+      static void PrintTitle(Book b)  // ╨Я╨╡╤З╨░╤В╤М ╨╜╨░╨╖╨▓╨░╨╜╨╕╤П ╨║╨╜╨╕╨│╨╕.
       {
          Console.WriteLine("   {0}", b.Title);
       }
 
       
-      static void Main() // Выполнение начинается здесь.
+      static void Main() // ╨Т╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╨╡ ╨╜╨░╤З╨╕╨╜╨░╨╡╤В╤Б╤П ╨╖╨┤╨╡╤Б╤М.
       {
          BookDB bookDB = new BookDB();
 
          
-         AddBooks(bookDB);      // Инициализация базы данных с использованием нескольких книг:
+         AddBooks(bookDB);      // ╨Ш╨╜╨╕╤Ж╨╕╨░╨╗╨╕╨╖╨░╤Ж╨╕╤П ╨▒╨░╨╖╤Л ╨┤╨░╨╜╨╜╤Л╤Е ╤Б ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╕╨╡╨╝ ╨╜╨╡╤Б╨║╨╛╨╗╤М╨║╨╕╤Е ╨║╨╜╨╕╨│:
 
          
-         Console.WriteLine("Paperback Book Titles:");  // Печать названий всех книг в бумажной обложке:
+         Console.WriteLine("Paperback Book Titles:");  // ╨Я╨╡╤З╨░╤В╤М ╨╜╨░╨╖╨▓╨░╨╜╨╕╨╣ ╨▓╤Б╨╡╤Е ╨║╨╜╨╕╨│ ╨▓ ╨▒╤Г╨╝╨░╨╢╨╜╨╛╨╣ ╨╛╨▒╨╗╨╛╨╢╨║╨╡:
 
-         // Создание нового объекта делегата, связанного со статическим методом Test.PrintTitle:
+         // ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨╜╨╛╨▓╨╛╨│╨╛ ╨╛╨▒╤К╨╡╨║╤В╨░ ╨┤╨╡╨╗╨╡╨│╨░╤В╨░, ╤Б╨▓╤П╨╖╨░╨╜╨╜╨╛╨│╨╛ ╤Б╨╛ ╤Б╤В╨░╤В╨╕╤З╨╡╤Б╨║╨╕╨╝ ╨╝╨╡╤В╨╛╨┤╨╛╨╝ Test.PrintTitle:
          bookDB.ProcessPaperbackBooks(new ProcessBookDelegate(PrintTitle));
 
-         // Получение средней цены книги в бумажной обложке при помощи объекта PriceTotaller:
+         // ╨Я╨╛╨╗╤Г╤З╨╡╨╜╨╕╨╡ ╤Б╤А╨╡╨┤╨╜╨╡╨╣ ╤Ж╨╡╨╜╤Л ╨║╨╜╨╕╨│╨╕ ╨▓ ╨▒╤Г╨╝╨░╨╢╨╜╨╛╨╣ ╨╛╨▒╨╗╨╛╨╢╨║╨╡ ╨┐╤А╨╕ ╨┐╨╛╨╝╨╛╤Й╨╕ ╨╛╨▒╤К╨╡╨║╤В╨░ PriceTotaller:
          PriceTotaller totaller = new PriceTotaller();
 
-         // Создание нового объекта-делегата, связанного с нестатическим объектом 
-         // методом AddBookToTotal объекта суммарных показателей:
+         // ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨╜╨╛╨▓╨╛╨│╨╛ ╨╛╨▒╤К╨╡╨║╤В╨░-╨┤╨╡╨╗╨╡╨│╨░╤В╨░, ╤Б╨▓╤П╨╖╨░╨╜╨╜╨╛╨│╨╛ ╤Б ╨╜╨╡╤Б╤В╨░╤В╨╕╤З╨╡╤Б╨║╨╕╨╝ ╨╛╨▒╤К╨╡╨║╤В╨╛╨╝ 
+         // ╨╝╨╡╤В╨╛╨┤╨╛╨╝ AddBookToTotal ╨╛╨▒╤К╨╡╨║╤В╨░ ╤Б╤Г╨╝╨╝╨░╤А╨╜╤Л╤Е ╨┐╨╛╨║╨░╨╖╨░╤В╨╡╨╗╨╡╨╣:
          bookDB.ProcessPaperbackBooks(new ProcessBookDelegate(totaller.AddBookToTotal));
 
          Console.WriteLine("Average Paperback Book Price: ${0:#.##}", totaller.AveragePrice() );
       }
 
       
-      static void AddBooks(BookDB bookDB) // Инициализация базы данных книг с использованием  нескольких тестовых книг:
+      static void AddBooks(BookDB bookDB) // ╨Ш╨╜╨╕╤Ж╨╕╨░╨╗╨╕╨╖╨░╤Ж╨╕╤П ╨▒╨░╨╖╤Л ╨┤╨░╨╜╨╜╤Л╤Е ╨║╨╜╨╕╨│ ╤Б ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╕╨╡╨╝  ╨╜╨╡╤Б╨║╨╛╨╗╤М╨║╨╕╤Е ╤В╨╡╤Б╤В╨╛╨▓╤Л╤Е ╨║╨╜╨╕╨│:
       {
          bookDB.AddBook("The C Programming Language",        "Brian W. Kernighan and Dennis M. Ritchie", 19.95m, true);
          bookDB.AddBook("The Unicode Standard 2.0",          "The Unicode Consortium", 39.95m, true);

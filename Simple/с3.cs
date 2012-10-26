@@ -1,4 +1,4 @@
-using cout = System.Console;   //®·ØÆ´ÏßÆ¢†≠®• Ø·•¢§Æ≠®¨†
+using cout = System.Console;   //–∏—Å–ø–æ–ª—å–∑–æ–≤–∞–Ω–∏–µ –ø—Å–µ–≤–¥–æ–Ω–∏–º–∞
 class App
 {
   static void Main() { cout.Write("Hello\n"); }

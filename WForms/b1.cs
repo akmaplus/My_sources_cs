@@ -6,21 +6,21 @@ public class MainWindow : Form
 
   public MainWindow()
           : base()
-                    {   this.Size = new System.Drawing.Size(300, 300);        //размер формы
+                    {   this.Size = new System.Drawing.Size(300, 300);        //СЂР°Р·РјРµСЂ С„РѕСЂРјС‹
                         this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
-                        Label label = new Label();  //новая метка - надпись на форме
+                        Label label = new Label();  //РЅРѕРІР°СЏ РјРµС‚РєР° - РЅР°РґРїРёСЃСЊ РЅР° С„РѕСЂРјРµ
 
-                        Font fnt = new Font("Verdana", 16, FontStyle.Bold | FontStyle.Italic);  //новый шрифт
+                        Font fnt = new Font("Verdana", 16, FontStyle.Bold | FontStyle.Italic);  //РЅРѕРІС‹Р№ С€СЂРёС„С‚
 
-                        label.AutoSize = true;                  //включить растягивание метки под текст
-                        label.Text = "Здесь была Алисса";       //текст метки
-                        label.Font = fnt;                       //шрифт метки
-                        label.BackColor = Color.Aquamarine;     //фоновый цвет метки
-                        label.ForeColor = Color.DarkMagenta;    //цвет шрифта метка
-                        label.Location = new Point(10, 50);     //расположение метки на форме
+                        label.AutoSize = true;                  //РІРєР»СЋС‡РёС‚СЊ СЂР°СЃС‚СЏРіРёРІР°РЅРёРµ РјРµС‚РєРё РїРѕРґ С‚РµРєСЃС‚
+                        label.Text = "Р—РґРµСЃСЊ Р±С‹Р»Р° РђР»РёСЃСЃР°";       //С‚РµРєСЃС‚ РјРµС‚РєРё
+                        label.Font = fnt;                       //С€СЂРёС„С‚ РјРµС‚РєРё
+                        label.BackColor = Color.Aquamarine;     //С„РѕРЅРѕРІС‹Р№ С†РІРµС‚ РјРµС‚РєРё
+                        label.ForeColor = Color.DarkMagenta;    //С†РІРµС‚ С€СЂРёС„С‚Р° РјРµС‚РєР°
+                        label.Location = new Point(10, 50);     //СЂР°СЃРїРѕР»РѕР¶РµРЅРёРµ РјРµС‚РєРё РЅР° С„РѕСЂРјРµ
 
-                        this.Controls.Add(label);               //добавить в форму новый контрол - нашу метку label
+                        this.Controls.Add(label);               //РґРѕР±Р°РІРёС‚СЊ РІ С„РѕСЂРјСѓ РЅРѕРІС‹Р№ РєРѕРЅС‚СЂРѕР» - РЅР°С€Сѓ РјРµС‚РєСѓ label
                      }
 }
 

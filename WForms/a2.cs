@@ -8,7 +8,7 @@ public class MainWindow : Form
                     {
                         ClientSize          = new System.Drawing.Size(422, 114);
                         Name = "MainWindow";
-                        Text = "Тест";
+                        Text = "РўРµСЃС‚";
                     }
 }
 

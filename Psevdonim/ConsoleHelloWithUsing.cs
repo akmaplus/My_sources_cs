@@ -1,17 +1,17 @@
-//использование несколько пространств имен, с одинаковыми именами внутри, и формы записи, для доступа к именам
+//╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╕╨╡ ╨╜╨╡╤Б╨║╨╛╨╗╤М╨║╨╛ ╨┐╤А╨╛╤Б╤В╤А╨░╨╜╤Б╤В╨▓ ╨╕╨╝╨╡╨╜, ╤Б ╨╛╨┤╨╕╨╜╨░╨║╨╛╨▓╤Л╨╝╨╕ ╨╕╨╝╨╡╨╜╨░╨╝╨╕ ╨▓╨╜╤Г╤В╤А╨╕, ╨╕ ╤Д╨╛╤А╨╝╤Л ╨╖╨░╨┐╨╕╤Б╨╕, ╨┤╨╗╤П ╨┤╨╛╤Б╤В╤Г╨┐╨░ ╨║ ╨╕╨╝╨╡╨╜╨░╨╝
 
-using Emma = BovaryEnterprises.VeryUsefulLibrary;  //создаем псевдоним доступа к пространству имен
+using Emma = BovaryEnterprises.VeryUsefulLibrary;  //╤Б╨╛╨╖╨┤╨░╨╡╨╝ ╨┐╤Б╨╡╨▓╨┤╨╛╨╜╨╕╨╝ ╨┤╨╛╤Б╤В╤Г╨┐╨░ ╨║ ╨┐╤А╨╛╤Б╤В╤А╨░╨╜╤Б╤В╨▓╤Г ╨╕╨╝╨╡╨╜
 using Anna = KareninaSoftware.HandyDandyLibrary;
 
 class ConsoleHelloWithUsing
 {
   public static void Main()
   {
-    //длинный вариант
+    //╨┤╨╗╨╕╨╜╨╜╤Л╨╣ ╨▓╨░╤А╨╕╨░╨╜╤В
     BovaryEnterprises.VeryUsefulLibrary.SuperString S1 = new BovaryEnterprises.VeryUsefulLibrary.SuperString();
     KareninaSoftware.HandyDandyLibrary.SuperString  S2 = new KareninaSoftware.HandyDandyLibrary.SuperString();
 
-    //короткий вариант
+    //╨║╨╛╤А╨╛╤В╨║╨╕╨╣ ╨▓╨░╤А╨╕╨░╨╜╤В
     Emma.SuperString s1 = new Emma.SuperString();
     Anna.SuperString s2 = new Anna.SuperString();
 

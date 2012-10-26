@@ -5,33 +5,33 @@ public class MainWindow : Form
 {
   public MainWindow()
           : base()
-                    {   this.Size = new System.Drawing.Size(300, 300);        //размер формы
+                    {   this.Size = new System.Drawing.Size(300, 300);        //СЂР°Р·РјРµСЂ С„РѕСЂРјС‹
                         this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
-                        try { this.Icon = new Icon("App.ico"); } catch {}     //выставляем значок на заголовок
+                        try { this.Icon = new Icon("App.ico"); } catch {}     //РІС‹СЃС‚Р°РІР»СЏРµРј Р·РЅР°С‡РѕРє РЅР° Р·Р°РіРѕР»РѕРІРѕРє
 
-                        Label lbl = new Label();  //новая метка - надпись на форме
-                        lbl.Name = "lbl";         //даем имя метки
+                        Label lbl = new Label();  //РЅРѕРІР°СЏ РјРµС‚РєР° - РЅР°РґРїРёСЃСЊ РЅР° С„РѕСЂРјРµ
+                        lbl.Name = "lbl";         //РґР°РµРј РёРјСЏ РјРµС‚РєРё
 
-                        Font fnt = new Font("Verdana", 16, FontStyle.Bold | FontStyle.Italic);  //новый шрифт
+                        Font fnt = new Font("Verdana", 16, FontStyle.Bold | FontStyle.Italic);  //РЅРѕРІС‹Р№ С€СЂРёС„С‚
 
-                        lbl.AutoSize = true;                  //включить растягивание метки под текст
-                        lbl.Text = "Здесь была Алисса";       //текст метки
-                        lbl.Font = fnt;                       //шрифт метки
-                        lbl.BackColor = Color.Aquamarine;     //фоновый цвет метки
-                        lbl.ForeColor = Color.DarkMagenta;    //цвет шрифта метка
-                        lbl.Location = new Point(10, 50);     //расположение метки на форме
+                        lbl.AutoSize = true;                  //РІРєР»СЋС‡РёС‚СЊ СЂР°СЃС‚СЏРіРёРІР°РЅРёРµ РјРµС‚РєРё РїРѕРґ С‚РµРєСЃС‚
+                        lbl.Text = "Р—РґРµСЃСЊ Р±С‹Р»Р° РђР»РёСЃСЃР°";       //С‚РµРєСЃС‚ РјРµС‚РєРё
+                        lbl.Font = fnt;                       //С€СЂРёС„С‚ РјРµС‚РєРё
+                        lbl.BackColor = Color.Aquamarine;     //С„РѕРЅРѕРІС‹Р№ С†РІРµС‚ РјРµС‚РєРё
+                        lbl.ForeColor = Color.DarkMagenta;    //С†РІРµС‚ С€СЂРёС„С‚Р° РјРµС‚РєР°
+                        lbl.Location = new Point(10, 50);     //СЂР°СЃРїРѕР»РѕР¶РµРЅРёРµ РјРµС‚РєРё РЅР° С„РѕСЂРјРµ
 
-                        this.Controls.Add(lbl);               //добавить в форму новый контрол - нашу метку label
+                        this.Controls.Add(lbl);               //РґРѕР±Р°РІРёС‚СЊ РІ С„РѕСЂРјСѓ РЅРѕРІС‹Р№ РєРѕРЅС‚СЂРѕР» - РЅР°С€Сѓ РјРµС‚РєСѓ label
 
-                        //подключение обработчика события - Движение мыши
+                        //РїРѕРґРєР»СЋС‡РµРЅРёРµ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕР±С‹С‚РёСЏ - Р”РІРёР¶РµРЅРёРµ РјС‹С€Рё
 
-                        //this.Controls[0].MouseMove += new MouseEventHandler(this.lbl_MouseMove);    //по индексу контрола
+                        //this.Controls[0].MouseMove += new MouseEventHandler(this.lbl_MouseMove);    //РїРѕ РёРЅРґРµРєСЃСѓ РєРѕРЅС‚СЂРѕР»Р°
 
-                        this.Controls["lbl"].MouseMove += new MouseEventHandler(this.lbl_MouseMove);  //по имени контрола
+                        this.Controls["lbl"].MouseMove += new MouseEventHandler(this.lbl_MouseMove);  //РїРѕ РёРјРµРЅРё РєРѕРЅС‚СЂРѕР»Р°
                      }
 
-                     //обработчик события - Движение мыши
+                     //РѕР±СЂР°Р±РѕС‚С‡РёРє СЃРѕР±С‹С‚РёСЏ - Р”РІРёР¶РµРЅРёРµ РјС‹С€Рё
                      private void lbl_MouseMove(object sender, MouseEventArgs e)
                      {
                         this.Text = string.Format("x:{0} y:{1}", e.X, e.Y);

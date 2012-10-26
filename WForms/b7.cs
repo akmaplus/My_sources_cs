@@ -10,7 +10,7 @@ public class MainWindow : Form
 
   public MainWindow()
           : base()
-                    {     Size = new Size(800, 800);   //размер формы
+                    {     Size = new Size(800, 800);   //СЂР°Р·РјРµСЂ С„РѕСЂРјС‹
                           FormBorderStyle = FormBorderStyle.FixedSingle;
                           MaximizeBox = false;
 
@@ -46,10 +46,10 @@ public class MainWindow : Form
       item3.SubItems.Add("9");
 
       // Create columns for the items and subitems. Width of -2 indicates auto-size.
-      lvwPanel.Columns.Add("Колонка компонента",  -2, HorizontalAlignment.Left);
-      lvwPanel.Columns.Add("Колонка 2",           -2, HorizontalAlignment.Left);
-      lvwPanel.Columns.Add("Колонка 3",           -2, HorizontalAlignment.Left);
-      lvwPanel.Columns.Add("Колонка 4",           -2, HorizontalAlignment.Center);
+      lvwPanel.Columns.Add("РљРѕР»РѕРЅРєР° РєРѕРјРїРѕРЅРµРЅС‚Р°",  -2, HorizontalAlignment.Left);
+      lvwPanel.Columns.Add("РљРѕР»РѕРЅРєР° 2",           -2, HorizontalAlignment.Left);
+      lvwPanel.Columns.Add("РљРѕР»РѕРЅРєР° 3",           -2, HorizontalAlignment.Left);
+      lvwPanel.Columns.Add("РљРѕР»РѕРЅРєР° 4",           -2, HorizontalAlignment.Center);
 
       //Add the items to the ListView.
       lvwPanel.Items.AddRange(new ListViewItem[]{item1,item2,item3});
@@ -70,9 +70,9 @@ public class MainWindow : Form
       
       this.Controls.Add(lvwPanel);  // Add the ListView to the control collection.
                           
-                          lvwPanel.Dock = DockStyle.Fill;     //докировка на всю поверхность формы
+                          lvwPanel.Dock = DockStyle.Fill;     //РґРѕРєРёСЂРѕРІРєР° РЅР° РІСЃСЋ РїРѕРІРµСЂС…РЅРѕСЃС‚СЊ С„РѕСЂРјС‹
                           Controls.Add(lvwPanel); 
-                          PerformLayout();                    //произвести раскладку формы
+                          PerformLayout();                    //РїСЂРѕРёР·РІРµСЃС‚Рё СЂР°СЃРєР»Р°РґРєСѓ С„РѕСЂРјС‹
                      }
 
   public static string GetMimeType(Image i)

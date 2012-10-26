@@ -2,32 +2,32 @@ using System;
 
 namespace b7
 {   
-    //базовый класс
+    //Р±Р°Р·РѕРІС‹Р№ РєР»Р°СЃСЃ
     class Base 
     { 
-        //ВИРТУАЛЬНЫЙ метод базового класса
+        //Р’РР РўРЈРђР›Р¬РќР«Р™ РјРµС‚РѕРґ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°
         public virtual void DoSomethingVirtual() 
         { 
             Console.WriteLine("Base.DoSomethingVirtual"); 
         } 
 
-        //метод базового класса - обычный
+        //РјРµС‚РѕРґ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° - РѕР±С‹С‡РЅС‹Р№
         public void DoSomethingNonVirtual() 
         { 
             Console.WriteLine("Base.DoSomethingNonVirtual"); 
         } 
     } 
 
-    //производный класс
+    //РїСЂРѕРёР·РІРѕРґРЅС‹Р№ РєР»Р°СЃСЃ
     class Derived : Base 
     { 
-        //ПЕРЕОПРЕДЕЛЕННЫЙ метод производного класса
+        //РџР•Р Р•РћРџР Р•Р”Р•Р›Р•РќРќР«Р™ РјРµС‚РѕРґ РїСЂРѕРёР·РІРѕРґРЅРѕРіРѕ РєР»Р°СЃСЃР°
         public override void DoSomethingVirtual() 
         { 
             Console.WriteLine("Derived.DoSomethingVirtual"); 
         }
 
-        //ЗАМЕЩЕННЫЙ (new) метод производного класса  - вызывается только через сигнатуру этого (переопределеннного) класса
+        //Р—РђРњР•Р©Р•РќРќР«Р™ (new) РјРµС‚РѕРґ РїСЂРѕРёР·РІРѕРґРЅРѕРіРѕ РєР»Р°СЃСЃР°  - РІС‹Р·С‹РІР°РµС‚СЃСЏ С‚РѕР»СЊРєРѕ С‡РµСЂРµР· СЃРёРіРЅР°С‚СѓСЂСѓ СЌС‚РѕРіРѕ (РїРµСЂРµРѕРїСЂРµРґРµР»РµРЅРЅРЅРѕРіРѕ) РєР»Р°СЃСЃР°
         public new void DoSomethingNonVirtual() 
         { 
             Console.WriteLine("Derived.DoSomethingNonVirtual"); 
@@ -39,16 +39,16 @@ namespace b7
         static void Main(string[] args)
         {
             Console.WriteLine("Derived via Base reference:\n");
-            Base baseRef = new Derived();                           //создаем ПРОИЗВОДНЫЙ класс в сигнатуру БАЗОВОГО класса
+            Base baseRef = new Derived();                           //СЃРѕР·РґР°РµРј РџР РћРР—Р’РћР”РќР«Р™ РєР»Р°СЃСЃ РІ СЃРёРіРЅР°С‚СѓСЂСѓ Р‘РђР—РћР’РћР“Рћ РєР»Р°СЃСЃР°
 
-            baseRef.DoSomethingVirtual();                           //вызываем виртуальный метод
-            baseRef.DoSomethingNonVirtual();                        //вызываем обычный метод
+            baseRef.DoSomethingVirtual();                           //РІС‹Р·С‹РІР°РµРј РІРёСЂС‚СѓР°Р»СЊРЅС‹Р№ РјРµС‚РѕРґ
+            baseRef.DoSomethingNonVirtual();                        //РІС‹Р·С‹РІР°РµРј РѕР±С‹С‡РЅС‹Р№ РјРµС‚РѕРґ
             
             Console.WriteLine("\n\nDerived via Derived reference:\n");
-            Derived derivedRef = new Derived();                     //создаем ПРОИЗВОДНЫЙ класс в сигнатуру ПРОИЗВОДНОГО класса
+            Derived derivedRef = new Derived();                     //СЃРѕР·РґР°РµРј РџР РћРР—Р’РћР”РќР«Р™ РєР»Р°СЃСЃ РІ СЃРёРіРЅР°С‚СѓСЂСѓ РџР РћРР—Р’РћР”РќРћР“Рћ РєР»Р°СЃСЃР°
 
-            derivedRef.DoSomethingVirtual();                        //вызываем виртуальный метод
-            derivedRef.DoSomethingNonVirtual();                     //вызываем обычный метод
+            derivedRef.DoSomethingVirtual();                        //РІС‹Р·С‹РІР°РµРј РІРёСЂС‚СѓР°Р»СЊРЅС‹Р№ РјРµС‚РѕРґ
+            derivedRef.DoSomethingNonVirtual();                     //РІС‹Р·С‹РІР°РµРј РѕР±С‹С‡РЅС‹Р№ РјРµС‚РѕРґ
             Console.ReadKey();
 
         }

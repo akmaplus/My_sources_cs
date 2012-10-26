@@ -1,4 +1,4 @@
-using System.Windows.Forms;   //минимальная аппликация
+using System.Windows.Forms;   //╨╝╨╕╨╜╨╕╨╝╨░╨╗╤М╨╜╨░╤П ╨░╨┐╨┐╨╗╨╕╨║╨░╤Ж╨╕╤П
 
 public class MainWindow : Form
 {

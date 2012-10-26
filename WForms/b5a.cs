@@ -16,12 +16,12 @@ public class MainWindow : Form
 
   public MainWindow()
           : base()
-                    {   Size = new System.Drawing.Size(300, 300);        //размер формы
+                    {   Size = new System.Drawing.Size(300, 300);        //СЂР°Р·РјРµСЂ С„РѕСЂРјС‹
                         FormBorderStyle = FormBorderStyle.FixedSingle;
                         MaximizeBox = false;
 
-                        smMain   = new   MenuStrip();          //новая менюшка
-                        smiFile  = new   ToolStripMenuItem();  //элементы менюшки
+                        smMain   = new   MenuStrip();          //РЅРѕРІР°СЏ РјРµРЅСЋС€РєР°
+                        smiFile  = new   ToolStripMenuItem();  //СЌР»РµРјРµРЅС‚С‹ РјРµРЅСЋС€РєРё
                         smiEdit  = new   ToolStripMenuItem();
                         smiHelp  = new   ToolStripMenuItem();
                         smiAbout = new   ToolStripMenuItem();
@@ -30,22 +30,22 @@ public class MainWindow : Form
                         smiOpen  = new   ToolStripMenuItem();
                         smiExit  = new   ToolStripMenuItem();
 
-                        smMain.SuspendLayout();  //заморозить раскладку формы
-                        SuspendLayout();         //заморозить раскладку меню
+                        smMain.SuspendLayout();  //Р·Р°РјРѕСЂРѕР·РёС‚СЊ СЂР°СЃРєР»Р°РґРєСѓ С„РѕСЂРјС‹
+                        SuspendLayout();         //Р·Р°РјРѕСЂРѕР·РёС‚СЊ СЂР°СЃРєР»Р°РґРєСѓ РјРµРЅСЋ
 
                         smMain.Location = new Point(0, 0);
 
-                        smMain.Name   = "smMain";    smMain.Text   = "Главное меню";
+                        smMain.Name   = "smMain";    smMain.Text   = "Р“Р»Р°РІРЅРѕРµ РјРµРЅСЋ";
 
-                        smiFile.Name  = "smiFile";   smiFile.Text  = "Файл"; 
-                        smiEdit.Name  = "smiEdit";   smiEdit.Text  = "Правка";
-                        smiHelp.Name  = "smiHelp";   smiHelp.Text  = "Справка";
+                        smiFile.Name  = "smiFile";   smiFile.Text  = "Р¤Р°Р№Р»"; 
+                        smiEdit.Name  = "smiEdit";   smiEdit.Text  = "РџСЂР°РІРєР°";
+                        smiHelp.Name  = "smiHelp";   smiHelp.Text  = "РЎРїСЂР°РІРєР°";
 
-                        smiAbout.Name = "smiAbout";  smiAbout.Text = "О программе";
-                        smiCopy.Name  = "smiCopy";   smiCopy.Text  = "Копировать";
-                        smiPaste.Name = "smiPaste";  smiPaste.Text = "Вставить";
-                        smiOpen.Name  = "smiOpen";   smiOpen.Text  = "Открыть";
-                        smiExit.Name  = "smiExit";   smiExit.Text  = "Выход";
+                        smiAbout.Name = "smiAbout";  smiAbout.Text = "Рћ РїСЂРѕРіСЂР°РјРјРµ";
+                        smiCopy.Name  = "smiCopy";   smiCopy.Text  = "РљРѕРїРёСЂРѕРІР°С‚СЊ";
+                        smiPaste.Name = "smiPaste";  smiPaste.Text = "Р’СЃС‚Р°РІРёС‚СЊ";
+                        smiOpen.Name  = "smiOpen";   smiOpen.Text  = "РћС‚РєСЂС‹С‚СЊ";
+                        smiExit.Name  = "smiExit";   smiExit.Text  = "Р’С‹С…РѕРґ";
 
                         smMain.Items.AddRange(          new ToolStripItem[] { smiFile, smiEdit, smiHelp } );
 
@@ -53,25 +53,25 @@ public class MainWindow : Form
                         smiEdit.DropDownItems.AddRange( new ToolStripItem[] { smiCopy, smiPaste } );
                         smiHelp.DropDownItems.AddRange( new ToolStripItem[] { smiAbout          } );
 
-                        smiAbout.Click += new EventHandler(smMain_Click);  //добавляем обработчики событий
+                        smiAbout.Click += new EventHandler(smMain_Click);  //РґРѕР±Р°РІР»СЏРµРј РѕР±СЂР°Р±РѕС‚С‡РёРєРё СЃРѕР±С‹С‚РёР№
                         smiCopy.Click  += new EventHandler(smMain_Click);
                         smiPaste.Click += new EventHandler(smMain_Click);
                         smiOpen.Click  += new EventHandler(smMain_Click);
                         smiExit.Click  += new EventHandler(smMain_Click);
                         
-                        Controls.Add(this.smMain);       //добавить контрол на форму
-                        MainMenuStrip = this.smMain;     //задействовать менюшку как основную
+                        Controls.Add(this.smMain);       //РґРѕР±Р°РІРёС‚СЊ РєРѕРЅС‚СЂРѕР» РЅР° С„РѕСЂРјСѓ
+                        MainMenuStrip = this.smMain;     //Р·Р°РґРµР№СЃС‚РІРѕРІР°С‚СЊ РјРµРЅСЋС€РєСѓ РєР°Рє РѕСЃРЅРѕРІРЅСѓСЋ
 
-                        ResumeLayout(false);             //разморозить раскладку формы
-                        smMain.ResumeLayout(false);      //разморозить раскладку меню
-                        smMain.PerformLayout();          //произвести раскладку меню
-                        PerformLayout();                 //произвести раскладку формы
+                        ResumeLayout(false);             //СЂР°Р·РјРѕСЂРѕР·РёС‚СЊ СЂР°СЃРєР»Р°РґРєСѓ С„РѕСЂРјС‹
+                        smMain.ResumeLayout(false);      //СЂР°Р·РјРѕСЂРѕР·РёС‚СЊ СЂР°СЃРєР»Р°РґРєСѓ РјРµРЅСЋ
+                        smMain.PerformLayout();          //РїСЂРѕРёР·РІРµСЃС‚Рё СЂР°СЃРєР»Р°РґРєСѓ РјРµРЅСЋ
+                        PerformLayout();                 //РїСЂРѕРёР·РІРµСЃС‚Рё СЂР°СЃРєР»Р°РґРєСѓ С„РѕСЂРјС‹
                      }
 
         private void smMain_Click(object sender, EventArgs e)
         {
-           ToolStripMenuItem smiSender = (ToolStripMenuItem)sender; //получаем объект-источник события
-           Text = string.Format("{0}", smiSender.Name);             //печатаем имя источника
+           ToolStripMenuItem smiSender = (ToolStripMenuItem)sender; //РїРѕР»СѓС‡Р°РµРј РѕР±СЉРµРєС‚-РёСЃС‚РѕС‡РЅРёРє СЃРѕР±С‹С‚РёСЏ
+           Text = string.Format("{0}", smiSender.Name);             //РїРµС‡Р°С‚Р°РµРј РёРјСЏ РёСЃС‚РѕС‡РЅРёРєР°
         }
 
 }

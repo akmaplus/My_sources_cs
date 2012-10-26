@@ -12,7 +12,7 @@ public partial class MainWindow : Form
                         AutoScaleMode       = System.Windows.Forms.AutoScaleMode.Font;
                         ClientSize          = new System.Drawing.Size(422, 114);
                         Name = "MainWindow";
-                        Text = "Простое приложение";
+                        Text = "РџСЂРѕСЃС‚РѕРµ РїСЂРёР»РѕР¶РµРЅРёРµ";
                         ResumeLayout(false);
                     }
 }

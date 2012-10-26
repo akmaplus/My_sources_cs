@@ -1,38 +1,38 @@
-                                        //странное - первый байт в файле ?????????????
+                                        //СЃС‚СЂР°РЅРЅРѕРµ - РїРµСЂРІС‹Р№ Р±Р°Р№С‚ РІ С„Р°Р№Р»Рµ ?????????????
 class App
 {
-  static System.IO.FileStream fs;       //файловый поток - (запись/чтение) в файл двоичных данных
-  static System.IO.BinaryWriter bw;     //двоичный врайтер - выдает поток байт на выход
+  static System.IO.FileStream fs;       //С„Р°Р№Р»РѕРІС‹Р№ РїРѕС‚РѕРє - (Р·Р°РїРёСЃСЊ/С‡С‚РµРЅРёРµ) РІ С„Р°Р№Р» РґРІРѕРёС‡РЅС‹С… РґР°РЅРЅС‹С…
+  static System.IO.BinaryWriter bw;     //РґРІРѕРёС‡РЅС‹Р№ РІСЂР°Р№С‚РµСЂ - РІС‹РґР°РµС‚ РїРѕС‚РѕРє Р±Р°Р№С‚ РЅР° РІС‹С…РѕРґ
   static System.Text.Encoding enc;
 
   static void Main()
   {
      enc = System.Text.Encoding.GetEncoding(1251);
 
-     fs = new System.IO.FileStream("log.txt", System.IO.FileMode.Create , System.IO.FileAccess.Write ); //на запись
-     bw = new System.IO.BinaryWriter(fs, enc);    //инициализация файловым потоком, с указанием рабочей кодировки
+     fs = new System.IO.FileStream("log.txt", System.IO.FileMode.Create , System.IO.FileAccess.Write ); //РЅР° Р·Р°РїРёСЃСЊ
+     bw = new System.IO.BinaryWriter(fs, enc);    //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ С„Р°Р№Р»РѕРІС‹Рј РїРѕС‚РѕРєРѕРј, СЃ СѓРєР°Р·Р°РЅРёРµРј СЂР°Р±РѕС‡РµР№ РєРѕРґРёСЂРѕРІРєРё
      
-     //по умолчанию запись идет в кодировке utf8
-     SayFile("{0} - {1} - {2}", "Hello", "File", "Приветик");
+     //РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ Р·Р°РїРёСЃСЊ РёРґРµС‚ РІ РєРѕРґРёСЂРѕРІРєРµ utf8
+     SayFile("{0} - {1} - {2}", "Hello", "File", "РџСЂРёРІРµС‚РёРє");
      fs.Close();
   }
    
-   static void Say(string prm, params object[] prms){  //форматная печать на консоль
+   static void Say(string prm, params object[] prms){  //С„РѕСЂРјР°С‚РЅР°СЏ РїРµС‡Р°С‚СЊ РЅР° РєРѕРЅСЃРѕР»СЊ
      System.Console.Write(prm, prms);               }
 
-   static void SayFile(string prm, params object[] prms){  //форматная печать в файл
+   static void SayFile(string prm, params object[] prms){  //С„РѕСЂРјР°С‚РЅР°СЏ РїРµС‡Р°С‚СЊ РІ С„Р°Р№Р»
      bw.Write(System.String.Format(prm, prms));    }
 }
 
-/* Модификаторы файлового режима     
-  System.IO.FileMode    .Truncate       усечь до нуля (пустого файла)
-                        .OpenOrCreate   открыть или создать новый 
-                        .Open           открыть существующий
-                        .CreateNew      создать новый (если файл существует - генерируется исключение)
-                        .Create         создать (если файл существует - он будет перезаписан, если файл уже существует (скрытый) - исключение) 
-                        .Append         добавить к существ файлу
-  доступа к файлу
-  System.IO.FileAccess  .Write       Запись
-                        .ReadWrite   запись-чтение
-                        .Read        Чтение
+/* РњРѕРґРёС„РёРєР°С‚РѕСЂС‹ С„Р°Р№Р»РѕРІРѕРіРѕ СЂРµР¶РёРјР°     
+  System.IO.FileMode    .Truncate       СѓСЃРµС‡СЊ РґРѕ РЅСѓР»СЏ (РїСѓСЃС‚РѕРіРѕ С„Р°Р№Р»Р°)
+                        .OpenOrCreate   РѕС‚РєСЂС‹С‚СЊ РёР»Рё СЃРѕР·РґР°С‚СЊ РЅРѕРІС‹Р№ 
+                        .Open           РѕС‚РєСЂС‹С‚СЊ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёР№
+                        .CreateNew      СЃРѕР·РґР°С‚СЊ РЅРѕРІС‹Р№ (РµСЃР»Рё С„Р°Р№Р» СЃСѓС‰РµСЃС‚РІСѓРµС‚ - РіРµРЅРµСЂРёСЂСѓРµС‚СЃСЏ РёСЃРєР»СЋС‡РµРЅРёРµ)
+                        .Create         СЃРѕР·РґР°С‚СЊ (РµСЃР»Рё С„Р°Р№Р» СЃСѓС‰РµСЃС‚РІСѓРµС‚ - РѕРЅ Р±СѓРґРµС‚ РїРµСЂРµР·Р°РїРёСЃР°РЅ, РµСЃР»Рё С„Р°Р№Р» СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ (СЃРєСЂС‹С‚С‹Р№) - РёСЃРєР»СЋС‡РµРЅРёРµ) 
+                        .Append         РґРѕР±Р°РІРёС‚СЊ Рє СЃСѓС‰РµСЃС‚РІ С„Р°Р№Р»Сѓ
+  РґРѕСЃС‚СѓРїР° Рє С„Р°Р№Р»Сѓ
+  System.IO.FileAccess  .Write       Р—Р°РїРёСЃСЊ
+                        .ReadWrite   Р·Р°РїРёСЃСЊ-С‡С‚РµРЅРёРµ
+                        .Read        Р§С‚РµРЅРёРµ
 */

@@ -1,0 +1,1 @@
+csc.exe /t:exe /reference:HelloMessage.dll /nologo TestApp.cs

@@ -2,19 +2,19 @@ using System;
 
 namespace b8
 {
-    //класс с интерфейсами Playable, IRecordable
+    //РєР»Р°СЃСЃ СЃ РёРЅС‚РµСЂС„РµР№СЃР°РјРё Playable, IRecordable
     public class AudioFile : IPlayable, IRecordable
     {
         /*
         public void Stop()
         {
-            // Интерфейс IPlayable 
+            // РРЅС‚РµСЂС„РµР№СЃ IPlayable 
             //Console.WriteLine("IPlayable");
         }
 
         public void IRecordable.Stop()
         {
-            // Интерфейс IRecordable 
+            // РРЅС‚РµСЂС„РµР№СЃ IRecordable 
             //Console.WriteLine("IRecordable");
         }
           */
@@ -24,7 +24,7 @@ namespace b8
     {
         public void Stop()
         {
-            // Интерфейс IPlayable 
+            // РРЅС‚РµСЂС„РµР№СЃ IPlayable 
         }
     }
 
@@ -32,7 +32,7 @@ namespace b8
     {
         public void Stop()
         {
-            // Интерфейс IPlayable 
+            // РРЅС‚РµСЂС„РµР№СЃ IPlayable 
         }
     }
 
@@ -42,8 +42,8 @@ namespace b8
         {
             AudioFile file = new AudioFile();
 
-            file.Stop();                        // Вызывает версию IPlayable version 
-            ((IRecordable)file).Stop();         // Вызывает версию IRecordabie version 
+            file.Stop();                        // Р’С‹Р·С‹РІР°РµС‚ РІРµСЂСЃРёСЋ IPlayable version 
+            ((IRecordable)file).Stop();         // Р’С‹Р·С‹РІР°РµС‚ РІРµСЂСЃРёСЋ IRecordabie version 
             Console.ReadKey();
         }
     }

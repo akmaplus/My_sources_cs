@@ -9,7 +9,7 @@ public class MainWindow : Form
 
   public MainWindow()
           : base()
-                    {     Size = new Size(800, 800);   //размер формы
+                    {     Size = new Size(800, 800);   //СЂР°Р·РјРµСЂ С„РѕСЂРјС‹
                           FormBorderStyle = FormBorderStyle.FixedSingle;
                           MaximizeBox = false;
 
@@ -25,9 +25,9 @@ public class MainWindow : Form
                                                 pbxImage.Image.PhysicalDimension.ToString(),
                                                 GetMimeType(pbxImage.Image));
                           
-                          pbxImage.Dock = DockStyle.Fill;     //докировка на всю поверхность формы
+                          pbxImage.Dock = DockStyle.Fill;     //РґРѕРєРёСЂРѕРІРєР° РЅР° РІСЃСЋ РїРѕРІРµСЂС…РЅРѕСЃС‚СЊ С„РѕСЂРјС‹
                           Controls.Add(pbxImage); 
-                          PerformLayout();                    //произвести раскладку формы
+                          PerformLayout();                    //РїСЂРѕРёР·РІРµСЃС‚Рё СЂР°СЃРєР»Р°РґРєСѓ С„РѕСЂРјС‹
                      }
 
   public static string GetMimeType(Image i)

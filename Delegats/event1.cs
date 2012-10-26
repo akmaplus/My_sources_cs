@@ -2,19 +2,19 @@ using System;
 namespace MyCollections{
                            using System.Collections;
    
-   public delegate void ChangedEventHandler(object sender, EventArgs e);   // Тип делегата для обработки уведомлений об изменении.
+   public delegate void ChangedEventHandler(object sender, EventArgs e);   // РўРёРї РґРµР»РµРіР°С‚Р° РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё СѓРІРµРґРѕРјР»РµРЅРёР№ РѕР± РёР·РјРµРЅРµРЅРёРё.
 
 
-   public class ListWithChangedEvent: ArrayList  // Класс, работающий аналогично ArrayList, но посылающий уведомления о событии при любых изменениях списка.
+   public class ListWithChangedEvent: ArrayList  // РљР»Р°СЃСЃ, СЂР°Р±РѕС‚Р°СЋС‰РёР№ Р°РЅР°Р»РѕРіРёС‡РЅРѕ ArrayList, РЅРѕ РїРѕСЃС‹Р»Р°СЋС‰РёР№ СѓРІРµРґРѕРјР»РµРЅРёСЏ Рѕ СЃРѕР±С‹С‚РёРё РїСЂРё Р»СЋР±С‹С… РёР·РјРµРЅРµРЅРёСЏС… СЃРїРёСЃРєР°.
    {
-      public event ChangedEventHandler Changed;    // Событие, с помощью которого клиенты могут получать уведомления о любых изменениях элементов списка.
+      public event ChangedEventHandler Changed;    // РЎРѕР±С‹С‚РёРµ, СЃ РїРѕРјРѕС‰СЊСЋ РєРѕС‚РѕСЂРѕРіРѕ РєР»РёРµРЅС‚С‹ РјРѕРіСѓС‚ РїРѕР»СѓС‡Р°С‚СЊ СѓРІРµРґРѕРјР»РµРЅРёСЏ Рѕ Р»СЋР±С‹С… РёР·РјРµРЅРµРЅРёСЏС… СЌР»РµРјРµРЅС‚РѕРІ СЃРїРёСЃРєР°.
       
-      protected virtual void OnChanged(EventArgs e) {   if (Changed != null)          // Вызов события Changed; вызывается при каждом изменении списка
+      protected virtual void OnChanged(EventArgs e) {   if (Changed != null)          // Р’С‹Р·РѕРІ СЃРѕР±С‹С‚РёСЏ Changed; РІС‹Р·С‹РІР°РµС‚СЃСЏ РїСЂРё РєР°Р¶РґРѕРј РёР·РјРµРЅРµРЅРёРё СЃРїРёСЃРєР°
                                                         Changed(this, e);
                                                     }
 
-      public override int Add(object value)         {   int i = base.Add(value);      // Переопределение некоторых методов, которые могут изменить список; 
-                                                        OnChanged(EventArgs.Empty);   // вызов события после каждого
+      public override int Add(object value)         {   int i = base.Add(value);      // РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РЅРµРєРѕС‚РѕСЂС‹С… РјРµС‚РѕРґРѕРІ, РєРѕС‚РѕСЂС‹Рµ РјРѕРіСѓС‚ РёР·РјРµРЅРёС‚СЊ СЃРїРёСЃРѕРє; 
+                                                        OnChanged(EventArgs.Empty);   // РІС‹Р·РѕРІ СЃРѕР±С‹С‚РёСЏ РїРѕСЃР»Рµ РєР°Р¶РґРѕРіРѕ
                                                         return i;
                                                     }
 
@@ -41,14 +41,14 @@ namespace TestEvents{
       private ListWithChangedEvent List;
 
       public EventListener(ListWithChangedEvent list){  List = list;
-                                                        // добавления "ListChanged" к событию Changed для "List".
+                                                        // РґРѕР±Р°РІР»РµРЅРёСЏ "ListChanged" Рє СЃРѕР±С‹С‚РёСЋ Changed РґР»СЏ "List".
                                                         List.Changed += new ChangedEventHandler(ListChanged);
                                                      }
 
-      private void ListChanged(object sender, EventArgs e){ // Этот вызов будет выполняться при любых изменениях списка.
+      private void ListChanged(object sender, EventArgs e){ // Р­С‚РѕС‚ РІС‹Р·РѕРІ Р±СѓРґРµС‚ РІС‹РїРѕР»РЅСЏС‚СЊСЃСЏ РїСЂРё Р»СЋР±С‹С… РёР·РјРµРЅРµРЅРёСЏС… СЃРїРёСЃРєР°.
                                                             Console.WriteLine("This is called when the event fires.");
                                                           }
-      public void Detach(){ // Отсоединение события и удаление списка
+      public void Detach(){ // РћС‚СЃРѕРµРґРёРЅРµРЅРёРµ СЃРѕР±С‹С‚РёСЏ Рё СѓРґР°Р»РµРЅРёРµ СЃРїРёСЃРєР°
                             List.Changed -= new ChangedEventHandler(ListChanged);
                             List = null;
                           }
@@ -56,15 +56,15 @@ namespace TestEvents{
 
    class Test 
    {
-      public static void Main(){ // Тестирование класса ListWithChangedEvent.
+      public static void Main(){ // РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РєР»Р°СЃСЃР° ListWithChangedEvent.
       
-        ListWithChangedEvent list = new ListWithChangedEvent();   // Создание нового списка.
+        ListWithChangedEvent list = new ListWithChangedEvent();   // РЎРѕР·РґР°РЅРёРµ РЅРѕРІРѕРіРѕ СЃРїРёСЃРєР°.
 
       
-        EventListener listener = new EventListener(list);    // Создание класса, ожидающего событий изменения списка.
+        EventListener listener = new EventListener(list);    // РЎРѕР·РґР°РЅРёРµ РєР»Р°СЃСЃР°, РѕР¶РёРґР°СЋС‰РµРіРѕ СЃРѕР±С‹С‚РёР№ РёР·РјРµРЅРµРЅРёСЏ СЃРїРёСЃРєР°.
 
       
-        list.Add("item 1");  // Добавление и удаление элементов списка.
+        list.Add("item 1");  // Р”РѕР±Р°РІР»РµРЅРёРµ Рё СѓРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ СЃРїРёСЃРєР°.
         list.Clear();
         listener.Detach();
                              }

@@ -7,40 +7,40 @@ public class MainWindow : Form
   public MainWindow()
           : base()
                     { 
-                        this.Size = new Size(300, 300);  //задаем размер формы
+                        this.Size = new Size(300, 300);  //Р·Р°РґР°РµРј СЂР°Р·РјРµСЂ С„РѕСЂРјС‹
 
                         this.Name = "MainWindow";
-                        this.Text = "Тест";
+                        this.Text = "РўРµСЃС‚";
                         this.MaximizeBox = false; 
                                                                            
                         this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
-                        //подключаем обработчик события - Прорисовка
+                        //РїРѕРґРєР»СЋС‡Р°РµРј РѕР±СЂР°Р±РѕС‚С‡РёРє СЃРѕР±С‹С‚РёСЏ - РџСЂРѕСЂРёСЃРѕРІРєР°
                         this.Paint += new PaintEventHandler(this.Form1_Paint);  //System.Windows.Forms.PaintEventHandler
                      }
 
-  //обработчик события - прорисовка содержимого формы на экране
+  //РѕР±СЂР°Р±РѕС‚С‡РёРє СЃРѕР±С‹С‚РёСЏ - РїСЂРѕСЂРёСЃРѕРІРєР° СЃРѕРґРµСЂР¶РёРјРѕРіРѕ С„РѕСЂРјС‹ РЅР° СЌРєСЂР°РЅРµ
   private void Form1_Paint(object sender, PaintEventArgs e)
   {
-    Font fnt = new Font("Verdana", 16, FontStyle.Bold | FontStyle.Italic);  //новый шрифт
-    Brush brush = new SolidBrush( Color.Blue );                             //новая кисть
-    System.Drawing.Pen pen = new Pen(Color.Gold, 2);                        //новое перо
+    Font fnt = new Font("Verdana", 16, FontStyle.Bold | FontStyle.Italic);  //РЅРѕРІС‹Р№ С€СЂРёС„С‚
+    Brush brush = new SolidBrush( Color.Blue );                             //РЅРѕРІР°СЏ РєРёСЃС‚СЊ
+    System.Drawing.Pen pen = new Pen(Color.Gold, 2);                        //РЅРѕРІРѕРµ РїРµСЂРѕ
 
-    //заливаем область рисования указанным цветом, очищая все
+    //Р·Р°Р»РёРІР°РµРј РѕР±Р»Р°СЃС‚СЊ СЂРёСЃРѕРІР°РЅРёСЏ СѓРєР°Р·Р°РЅРЅС‹Рј С†РІРµС‚РѕРј, РѕС‡РёС‰Р°СЏ РІСЃРµ
     e.Graphics.Clear(Color.LightPink);
 
-    //рисуем прямоугольники
+    //СЂРёСЃСѓРµРј РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєРё
     e.Graphics.DrawRectangle(pen, new Rectangle(1, 1, 100, 100));
     e.Graphics.DrawRectangle(pen, 101, 101, 150, 150);
     e.Graphics.FillRectangle(brush, 50, 50, 50, 50);
 
-    //рисуем линию
+    //СЂРёСЃСѓРµРј Р»РёРЅРёСЋ
     e.Graphics.DrawLine(pen, 1,1, 100, 100);
  
-    //рисуем текст
+    //СЂРёСЃСѓРµРј С‚РµРєСЃС‚
     e.Graphics.DrawString("Hello",  fnt, brush, new PointF(1, 1));
     e.Graphics.DrawString("Hi",     fnt, brush, new PointF(100, 100));
-    e.Graphics.DrawString("Привет", fnt, brush, 150.0f, 150.0f);
+    e.Graphics.DrawString("РџСЂРёРІРµС‚", fnt, brush, 150.0f, 150.0f);
   }
 
 }

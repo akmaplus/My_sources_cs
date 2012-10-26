@@ -4,16 +4,16 @@ namespace b1
 {
     class Vertex3D
     {
-        //(закрытые) поля класса (данные)
+        //(Р·Р°РєСЂС‹С‚С‹Рµ) РїРѕР»СЏ РєР»Р°СЃСЃР° (РґР°РЅРЅС‹Рµ)
         private double _x;
         private double _y;
         private double _z;
 
-        //свойства класса
+        //СЃРІРѕР№СЃС‚РІР° РєР»Р°СЃСЃР°
         public double X
         {
-            get { return _x;  } //метод get
-            set { _x = value; } //метод set
+            get { return _x;  } //РјРµС‚РѕРґ get
+            set { _x = value; } //РјРµС‚РѕРґ set
         }
 
         public double Y
@@ -28,7 +28,7 @@ namespace b1
             set { _z = value; }
         }
 
-        //метод класса
+        //РјРµС‚РѕРґ РєР»Р°СЃСЃР°
         public void SetToOrigin()
         {
             X = Y = Z = 0.0;
@@ -39,11 +39,11 @@ namespace b1
     {
         static void Main(string[] args)
         {
-            Vertex3D obj = new Vertex3D(); //создаем класс
+            Vertex3D obj = new Vertex3D(); //СЃРѕР·РґР°РµРј РєР»Р°СЃСЃ
 
-            obj.SetToOrigin();      //вызываем метод класса
+            obj.SetToOrigin();      //РІС‹Р·С‹РІР°РµРј РјРµС‚РѕРґ РєР»Р°СЃСЃР°
 
-            obj.X = 13.0;       //присв. свойствам класса - значение
+            obj.X = 13.0;       //РїСЂРёСЃРІ. СЃРІРѕР№СЃС‚РІР°Рј РєР»Р°СЃСЃР° - Р·РЅР°С‡РµРЅРёРµ
         }
     }
 }
