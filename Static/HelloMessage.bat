@@ -1,0 +1,1 @@
+csc.exe /target:library /nologo HelloMessage.cs

@@ -1,0 +1,20 @@
+// интерфейс IDisposable - использование в локальных using
+class App
+{
+
+  static void Main()
+  {  
+     //используем локальные using операторы для автоматического закрывания ресурсов по выходу из области действия блока
+     using ( System.IO.FileStream fs = new System.IO.FileStream("log.txt", System.IO.FileMode.Create , System.IO.FileAccess.Write ) )
+     using ( System.IO.BinaryWriter bw = new System.IO.BinaryWriter(fs, System.Text.Encoding.GetEncoding(1251)) )
+     { //если ресурсов несколько - они последовательно перечисляются в нескольких строках, каждая со скобками, блок может быть один на все, можно вкладывать
+
+      SayFile(bw, "{0} - {1}\n", "Привет", "файл");
+
+     }
+ }
+   static void SayFile(System.IO.BinaryWriter bws, string prm, params object[] prms){  //форматная печать в файл
+     bws.Write(System.String.Format(prm, prms));    }
+
+}
+
